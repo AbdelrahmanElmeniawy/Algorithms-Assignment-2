@@ -4,9 +4,11 @@ import java.util.*;
 public class Activity {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException {
-		Scanner scanner = new Scanner(System.in);
-	    System.out.print("Enter file absolute path: ");
-	    String filepath = scanner.nextLine();
+		if (args.length != 1) {
+			System.out.println("Enter the file path, please.");
+			return;
+		}
+	    String filepath = args[0];
 	    File inputfile = new File(filepath);
 	    Scanner reader = new Scanner(inputfile);
 	    int size = reader.nextInt();
